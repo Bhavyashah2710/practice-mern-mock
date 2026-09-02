@@ -2,7 +2,7 @@
 
 ## Candidate Instructions
 
-**Time:** 90 minutes  
+**Time:** 3 hours  
 **Difficulty:** Based on the material currently present in `mern_at_marque`  
 **Topics:** HTML, CSS, JavaScript, Node.js, modules, `fs`, JSON, Git/GitHub
 
