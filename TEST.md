@@ -1,142 +1,106 @@
-# MERN Full-Stack Mock Assessment
+# University Practical Mock — HTML, CSS, JavaScript & Node.js
 
 ## Candidate Instructions
 
 **Time:** 90 minutes  
-**Difficulty:** University pre-test / practical assessment  
-**Stack:** MongoDB, Express.js, React.js, Node.js  
+**Difficulty:** Based on the material currently present in `mern_at_marque`  
+**Topics:** HTML, CSS, JavaScript, Node.js, modules, `fs`, JSON, Git/GitHub
 
-> Treat this repository like a real assessment. Read the task carefully, create your own feature branch, implement the requested changes, test locally, commit your work, push your branch, and open a Pull Request to `main`.
+> Treat this repository like a real assessment. There are NO questions to answer. This is a direct implementation task. Read the requirements, create your feature branch, implement the application, test it, commit it, push it, and open a Pull Request.
 
 ## Git Workflow
 
 1. Clone this repository.
-2. Create a feature branch using this format:
-   `feature/<your-name>`
+2. Create a feature branch using `feature/<your-name>`.
 3. Do all assessment work on that branch.
-4. Do **not** commit directly to `main`.
+4. Do not commit directly to `main`.
 5. Use meaningful commit messages.
 6. Push your branch to GitHub.
 7. Open a Pull Request from your branch into `main`.
 
-## Assessment Scenario
+## Assessment Task — Employee Management Dashboard
 
-Build a small **Task Manager** feature for a MERN application.
+Build a small **Employee Management Dashboard** using the technologies covered so far.
 
-The starter project contains a Node/Express backend and a React frontend. Your job is to complete the missing functionality described below.
+A starter `employees.json` file is provided. Complete the missing frontend and Node.js functionality.
 
-## Backend Requirements — 40 Marks
+## Part A — HTML & CSS — 25 Marks
 
-### 1. Task Model — 10 marks
+Create the employee dashboard page in `frontend/index.html` and `frontend/style.css`.
 
-Create a MongoDB/Mongoose model for a task with:
+The page must contain:
 
-- `title` — required String
-- `description` — optional String
-- `completed` — Boolean, default `false`
-- `createdAt` — automatically generated timestamp
+- A navigation/header section with the application title.
+- An employee input form containing employee ID, name, salary, age, country, and department.
+- A search input for employee names.
+- A department filter.
+- A section where employee records are displayed.
+- An empty-state message when no employees match.
 
-### 2. API Routes — 20 marks
+Use CSS concepts covered in the course, including Flexbox, spacing, borders, border-radius, hover effects, sizing, typography, and basic responsive behavior.
 
-Implement these REST endpoints:
+## Part B — JavaScript — 35 Marks
 
-| Method | Endpoint | Requirement |
-|---|---|---|
-| GET | `/api/tasks` | Return all tasks |
-| POST | `/api/tasks` | Create a task |
-| PUT | `/api/tasks/:id` | Update a task |
-| DELETE | `/api/tasks/:id` | Delete a task |
+Implement the application logic in `frontend/script.js`.
 
-For invalid input or a missing task, return an appropriate HTTP status and JSON error message.
+The application must:
 
-### 3. Server Integration — 10 marks
+1. Load employee data from the provided JSON data.
+2. Display employees dynamically in an HTML table or employee-card layout.
+3. Display employee ID, name, salary, age, country, and department.
+4. Implement name search.
+5. Implement department filtering.
+6. Allow the user to add a new employee through the form.
+7. Validate required form values before adding an employee.
+8. Update the displayed employee list immediately after adding an employee.
+9. Provide a delete action for each employee.
+10. Update the displayed list immediately after deletion.
 
-Connect the model and routes to the Express server. Keep MongoDB connection logic separate from route logic where practical.
+Use arrays, objects, functions, DOM manipulation, events, loops, and array methods where appropriate.
 
-## Frontend Requirements — 40 Marks
+## Part C — Node.js — 30 Marks
 
-### 4. Display Tasks — 15 marks
+Complete the Node.js portion in `backend/` using Node.js and the built-in `fs` module.
 
-Create a React task list that loads tasks from the backend and displays:
+Your program must:
 
-- title
-- description
-- completed status
-- a delete button
+1. Read `employees.json` using `fs.readFileSync()`.
+2. Use UTF-8 encoding.
+3. Convert the JSON string into JavaScript data using `JSON.parse()`.
+4. Display the employee data.
+5. Create a separate module containing at least two reusable functions related to employee data.
+6. Export those functions using `module.exports`.
+7. Import the module using `require()`.
+8. Use the imported functions from the main Node.js file.
+9. Add one new employee to the employee data.
+10. Save the updated employee data back to `employees.json` using the appropriate `fs` method.
 
-Show a useful message while loading and when there are no tasks.
+Keep the Node.js code separated into sensible files.
 
-### 5. Add Task Form — 15 marks
+## Part D — Git & Submission — 10 Marks
 
-Create a form that allows the user to enter:
+Your submission must use a feature branch, contain meaningful commits, be pushed to GitHub, and include a Pull Request targeting `main` with a short description of what you implemented and tested.
 
-- title
-- description
+## Final Requirements
 
-On successful submission, the new task should appear in the list without requiring a full page reload.
+Before opening the PR, verify that:
 
-### 6. Complete / Toggle Task — 10 marks
-
-Allow the user to toggle the `completed` status of an existing task using the backend API.
-
-## Code Quality & Git — 20 Marks
-
-### 7. Code Quality — 10 marks
-
-- Clear component and variable names
-- Reusable React components where reasonable
-- Proper error handling
-- No unnecessary duplicated code
-- Clean project structure
-
-### 8. Git & Pull Request — 10 marks
-
-Your submission must:
-
-- use a feature branch
-- contain meaningful commits
-- be pushed to GitHub
-- include a Pull Request targeting `main`
-- include a short PR description explaining what you changed and how you tested it
-
-## Bonus — 10 Marks
-
-Optional bonus work:
-
-- Add filtering for **All / Completed / Pending** tasks.
-- Add basic frontend form validation.
-- Improve the UI with clean responsive styling.
-
-## Expected API Example
-
-### POST `/api/tasks`
-
-Request:
-
-```json
-{
-  "title": "Learn Express",
-  "description": "Practice REST APIs"
-}
-```
-
-Successful response should return the created task as JSON.
-
-## Submission Checklist
-
-Before opening the PR, verify:
-
-- [ ] Application starts successfully.
-- [ ] MongoDB connection works.
-- [ ] GET, POST, PUT and DELETE APIs work.
-- [ ] Tasks can be added from React.
-- [ ] Tasks can be displayed from React.
-- [ ] Tasks can be marked complete/pending.
-- [ ] Tasks can be deleted.
-- [ ] No work was committed directly to `main`.
-- [ ] Feature branch is pushed.
+- [ ] HTML page opens correctly.
+- [ ] CSS styling is applied.
+- [ ] Employee data is displayed dynamically.
+- [ ] Search works.
+- [ ] Department filter works.
+- [ ] Add employee works.
+- [ ] Delete employee works.
+- [ ] Form validation works.
+- [ ] Node.js program runs without errors.
+- [ ] JSON is read and parsed correctly.
+- [ ] Separate Node.js module is imported and used.
+- [ ] Updated JSON data is saved correctly.
+- [ ] Work is committed on a feature branch.
+- [ ] Branch is pushed to GitHub.
 - [ ] Pull Request is opened against `main`.
 
 ## Important
 
-Do not modify this assessment document. Complete the task in the application code and submit your solution through the required Git workflow.
+Do not modify this assessment document. Do not ask for or provide solutions during the assessment. This repository is intended to be completed as a direct practical task.
